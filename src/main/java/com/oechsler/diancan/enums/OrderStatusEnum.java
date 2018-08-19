@@ -1,28 +1,22 @@
 package com.oechsler.diancan.enums;
 
-import io.swagger.models.auth.In;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 
-/**
- * 商品状态
- * @author rocky
- * 2018-6-10
- */
 @Getter
-public enum  ProductStatusEnum {
+public enum OrderStatusEnum {
 
 
-    UP(0,"在架"),
-    DOWN(1,"下架")
-    ;
-
+    NEW(0,"新订单"),
+    FINSISHED(1,"完结"),
+    CANCEL(2,"已取消");
 
     private Integer code;
 
     private String message;
 
-    ProductStatusEnum(Integer code, String message) {
+    OrderStatusEnum(Integer code, String message) {
         this.code = code;
         this.message = message;
     }

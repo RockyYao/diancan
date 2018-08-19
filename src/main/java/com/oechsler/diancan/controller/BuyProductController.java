@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author rocky
- * 买家购买API
+ * 买家界面API
  */
 @Slf4j
 @RestController
@@ -73,9 +73,9 @@ public class BuyProductController {
 
             productVoList.add(productVo);
         }
-
-      return ResultVoUtil.success(productVoList);
         log.info("-----------------resultvo return over------------------------");
+      return ResultVoUtil.success(productVoList);
+
     }
 
 

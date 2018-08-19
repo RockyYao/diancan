@@ -1,5 +1,6 @@
 package com.oechsler.diancan.entity;
 
+import com.oechsler.diancan.enums.ProductStatusEnum;
 import lombok.Data;
 import lombok.ToString;
 import org.hibernate.annotations.DynamicUpdate;
