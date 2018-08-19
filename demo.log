@@ -1,0 +1,99 @@
+2018-08-16 15:20:35.593  INFO 164948 --- [main] com.oechsler.diancan.DiancanApplication  : Starting DiancanApplication on OTC-1658 with PID 164948 (F:\oechsler\diancan\target\classes started by rockyyao in F:\oechsler\diancan)
+2018-08-16 15:20:35.596  INFO 164948 --- [main] com.oechsler.diancan.DiancanApplication  : No active profile set, falling back to default profiles: default
+2018-08-16 15:20:35.650  INFO 164948 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@495ee280: startup date [Thu Aug 16 15:20:35 CST 2018]; root of context hierarchy
+2018-08-16 15:20:36.699  INFO 164948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-08-16 15:20:36.717  INFO 164948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-08-16 15:20:36.717  INFO 164948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-16 15:20:36.721  INFO 164948 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java1.8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\java\bin;C:\Users\rockyyao.OECHSLERTC\AppData\Roaming\npm;C:\adb;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Node.js\;D:\Git\cmd;D:\Maven\apache-maven-3.5.0-bin\apache-maven-3.5.0\bin;C:\Users\rockyyao.OECHSLERTC\AppData\Local\Microsoft\WindowsApps;C:\Users\rockyyao.OECHSLERTC\AppData\Roaming\npm;C:\Users\rockyyao.OECHSLERTC\AppData\Local\GitHubDesktop\bin;.]
+2018-08-16 15:20:36.797  INFO 164948 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-08-16 15:20:36.797  INFO 164948 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1147 ms
+2018-08-16 15:20:36.850  INFO 164948 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-08-16 15:20:36.854  INFO 164948 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-16 15:20:36.855  INFO 164948 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-16 15:20:36.855  INFO 164948 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-16 15:20:36.855  INFO 164948 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-16 15:20:37.158  INFO 164948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/{id}],methods=[GET]}" onto public com.oechsler.diancan.pojo.User com.oechsler.diancan.controller.Swagger2Demo.getUserById(java.lang.Integer)
+2018-08-16 15:20:37.159  INFO 164948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-08-16 15:20:37.164  INFO 164948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-08-16 15:20:37.165  INFO 164948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-08-16 15:20:37.166  INFO 164948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-08-16 15:20:37.169  INFO 164948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-16 15:20:37.170  INFO 164948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-16 15:20:37.308  INFO 164948 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-16 15:20:37.460  INFO 164948 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@495ee280: startup date [Thu Aug 16 15:20:35 CST 2018]; root of context hierarchy
+2018-08-16 15:20:37.502  INFO 164948 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-16 15:20:37.502  INFO 164948 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-16 15:20:37.626  INFO 164948 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-08-16 15:20:37.633  INFO 164948 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-08-16 15:20:37.633  INFO 164948 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-08-16 15:20:37.646  INFO 164948 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-08-16 15:20:37.656  INFO 164948 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-08-16 15:20:37.853  INFO 164948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-08-16 15:20:37.857  INFO 164948 --- [main] com.oechsler.diancan.DiancanApplication  : Started DiancanApplication in 2.587 seconds (JVM running for 3.158)
+2018-08-16 15:20:42.175  INFO 164948 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-16 15:20:42.176  INFO 164948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-16 15:20:42.198  INFO 164948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2018-08-16 15:21:13.910  INFO 164948 --- [http-nio-8080-exec-1] c.o.diancan.controller.Swagger2Demo      : 用户ID1进入方法
+2018-08-16 15:21:51.384  INFO 164948 --- [http-nio-8080-exec-5] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:21:51.384  INFO 164948 --- [http-nio-8080-exec-5] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@5b24101d返回
+2018-08-16 15:21:58.504  INFO 164948 --- [http-nio-8080-exec-4] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:21:58.504  INFO 164948 --- [http-nio-8080-exec-4] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@43650ad8返回
+2018-08-16 15:22:01.958  INFO 164948 --- [http-nio-8080-exec-3] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:01.958  INFO 164948 --- [http-nio-8080-exec-3] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@1493c1f0返回
+2018-08-16 15:22:02.557  INFO 164948 --- [http-nio-8080-exec-10] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:02.557  INFO 164948 --- [http-nio-8080-exec-10] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@2d83d1fe返回
+2018-08-16 15:22:02.740  INFO 164948 --- [http-nio-8080-exec-9] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:02.741  INFO 164948 --- [http-nio-8080-exec-9] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@201996aa返回
+2018-08-16 15:22:02.932  INFO 164948 --- [http-nio-8080-exec-1] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:02.933  INFO 164948 --- [http-nio-8080-exec-1] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@b21ebfb返回
+2018-08-16 15:22:03.068  INFO 164948 --- [http-nio-8080-exec-6] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:03.069  INFO 164948 --- [http-nio-8080-exec-6] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@67484dd8返回
+2018-08-16 15:22:03.229  INFO 164948 --- [http-nio-8080-exec-7] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:03.230  INFO 164948 --- [http-nio-8080-exec-7] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@b922657返回
+2018-08-16 15:22:03.380  INFO 164948 --- [http-nio-8080-exec-8] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:03.381  INFO 164948 --- [http-nio-8080-exec-8] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@d9325d1返回
+2018-08-16 15:22:03.524  INFO 164948 --- [http-nio-8080-exec-2] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:03.525  INFO 164948 --- [http-nio-8080-exec-2] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@3bbcd8ca返回
+2018-08-16 15:22:03.654  INFO 164948 --- [http-nio-8080-exec-5] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:03.654  INFO 164948 --- [http-nio-8080-exec-5] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@37aab653返回
+2018-08-16 15:22:03.790  INFO 164948 --- [http-nio-8080-exec-4] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:22:03.791  INFO 164948 --- [http-nio-8080-exec-4] c.o.diancan.controller.Swagger2Demo      : 用户com.oechsler.diancan.pojo.User@3ec90d8d返回
+2018-08-16 15:22:44.206  INFO 18348 --- [main] com.oechsler.diancan.DiancanApplication  : Starting DiancanApplication on OTC-1658 with PID 18348 (F:\oechsler\diancan\target\classes started by rockyyao in F:\oechsler\diancan)
+2018-08-16 15:22:44.209  INFO 18348 --- [main] com.oechsler.diancan.DiancanApplication  : No active profile set, falling back to default profiles: default
+2018-08-16 15:22:44.249  INFO 18348 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4fa1c212: startup date [Thu Aug 16 15:22:44 CST 2018]; root of context hierarchy
+2018-08-16 15:22:45.402  INFO 18348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-08-16 15:22:45.419  INFO 18348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-08-16 15:22:45.419  INFO 18348 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-16 15:22:45.423  INFO 18348 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java1.8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\java\bin;C:\Users\rockyyao.OECHSLERTC\AppData\Roaming\npm;C:\adb;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Node.js\;D:\Git\cmd;D:\Maven\apache-maven-3.5.0-bin\apache-maven-3.5.0\bin;C:\Users\rockyyao.OECHSLERTC\AppData\Local\Microsoft\WindowsApps;C:\Users\rockyyao.OECHSLERTC\AppData\Roaming\npm;C:\Users\rockyyao.OECHSLERTC\AppData\Local\GitHubDesktop\bin;.]
+2018-08-16 15:22:45.494  INFO 18348 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-08-16 15:22:45.495  INFO 18348 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1246 ms
+2018-08-16 15:22:45.548  INFO 18348 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-08-16 15:22:45.552  INFO 18348 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-16 15:22:45.552  INFO 18348 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-16 15:22:45.552  INFO 18348 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-16 15:22:45.553  INFO 18348 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-16 15:22:45.850  INFO 18348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/{id}],methods=[GET]}" onto public com.oechsler.diancan.pojo.User com.oechsler.diancan.controller.Swagger2Demo.getUserById(java.lang.Integer)
+2018-08-16 15:22:45.852  INFO 18348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-08-16 15:22:45.856  INFO 18348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-08-16 15:22:45.857  INFO 18348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-08-16 15:22:45.857  INFO 18348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-08-16 15:22:45.860  INFO 18348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-16 15:22:45.860  INFO 18348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-16 15:22:45.991  INFO 18348 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-16 15:22:46.139  INFO 18348 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4fa1c212: startup date [Thu Aug 16 15:22:44 CST 2018]; root of context hierarchy
+2018-08-16 15:22:46.183  INFO 18348 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-16 15:22:46.183  INFO 18348 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-16 15:22:46.301  INFO 18348 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-08-16 15:22:46.309  INFO 18348 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-08-16 15:22:46.309  INFO 18348 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-08-16 15:22:46.323  INFO 18348 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-08-16 15:22:46.334  INFO 18348 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-08-16 15:22:46.530  INFO 18348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-08-16 15:22:46.533  INFO 18348 --- [main] com.oechsler.diancan.DiancanApplication  : Started DiancanApplication in 2.648 seconds (JVM running for 3.211)
+2018-08-16 15:23:26.545  INFO 18348 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-16 15:23:26.545  INFO 18348 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-16 15:23:26.560  INFO 18348 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+2018-08-16 15:23:26.582  INFO 18348 --- [http-nio-8080-exec-4] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:23:26.582  INFO 18348 --- [http-nio-8080-exec-4] c.o.diancan.controller.Swagger2Demo      : 用户User(name=lisi, age=16)返回
+2018-08-16 15:23:32.001  INFO 18348 --- [http-nio-8080-exec-6] c.o.diancan.controller.Swagger2Demo      : 用户ID2进入方法
+2018-08-16 15:23:32.002  INFO 18348 --- [http-nio-8080-exec-6] c.o.diancan.controller.Swagger2Demo      : 用户User(name=lisi, age=16)返回
