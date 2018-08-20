@@ -30,7 +30,7 @@ public class ProductCategory implements Serializable{
     /** 类目编号**/
     private Integer categoryType;
 
-    private Date creatTime;
+    private Date createTime;
 
     private Date updateTime;
 

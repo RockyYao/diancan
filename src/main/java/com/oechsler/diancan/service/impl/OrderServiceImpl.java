@@ -55,7 +55,7 @@ public class OrderServiceImpl implements OrderService {
                 throw new SellException(ResultEnum.PRODUCT_NOT_EXIT);
             }
             //计算订单总价
-          orderAmout=orderDetail.getProductPrice()
+          orderAmout=productInfo.getProductPrice()
                   .multiply(new BigDecimal(orderDetail.getProductQuantity()))
                   .add(orderAmout);
             //订单详情入库
@@ -69,8 +69,8 @@ public class OrderServiceImpl implements OrderService {
 
         //写入订单数据
         OrderMaster orderMaster=new OrderMaster();
-        orderMaster.setOrderAmout(orderAmout);
-        orderMaster.setOrderID(orderId);
+        orderMaster.setOrderAmount(orderAmout);
+        orderMaster.setOrderId(orderId);
         orderMaster.setBuyerAddress(orderDto.getBuyerAddress());
         orderMaster.setBuyerName(orderDto.getBuyerName());
         orderMaster.setBuyerOpenid(orderDto.getBuyerOpenid());
@@ -108,7 +108,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Page<OrderDto> findList(String buyerOpenid, Pageable pageable) {
-        Page<OrderMaster> orderMasters=orderMasterRepository.findByByAndBuyerOpenid(buyerOpenid,pageable);
+        Page<OrderMaster> orderMasters=orderMasterRepository.findByBuyerOpenid(buyerOpenid,pageable);
         List<OrderDto> orderDtoList=OrderMaster2OrderDTO.convert(orderMasters.getContent());
         Page<OrderDto> orderDtos=new PageImpl<>(orderDtoList,pageable,orderMasters.getTotalElements());
         return orderDtos;
@@ -118,20 +118,20 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     public OrderDto cancel(OrderDto orderDto) {
 
-        if (orderDto.getOrderID()==null){
+        if (orderDto.getOrderId()==null){
             log.error("订单ID为空对象{}",orderDto.toString());
             throw new SellException(ResultEnum.ORDERID_IS_NULL);
         }
-        OrderMaster orderMaster=orderMasterRepository.findOne(orderDto.getOrderID());
+        OrderMaster orderMaster=orderMasterRepository.findOne(orderDto.getOrderId());
         if (orderMaster==null){
-            log.error("订单不存在 订单ID{}",orderDto.getOrderID());
+            log.error("订单不存在 订单ID{}",orderDto.getOrderId());
             throw new SellException(ResultEnum.ORDER_NOT_EXIT);
         }
         BeanUtils.copyProperties(orderMaster,orderDto);
 
         //判断订单状态
         if (!orderMaster.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
-            log.error("OrderService.cancel订单结束状态不正确，orderId={}，orderStatus={}",orderDto.getOrderID(),orderMaster.getOrderStatus());
+            log.error("OrderService.cancel订单结束状态不正确，orderId={}，orderStatus={}",orderDto.getOrderId(),orderMaster.getOrderStatus());
             throw new SellException(ResultEnum.ORDER_STATUS_ERROR);
         }
         //修改订单状态
@@ -141,10 +141,10 @@ public class OrderServiceImpl implements OrderService {
             log.error("更新失败 orderMaster={}",orderMaster);
             throw new SellException(ResultEnum.ORDER_UPADTE_FAIL);
         }
-        List<OrderDetail> orderDetails=detailRepository.findByOrderId(orderDto.getOrderID());
+        List<OrderDetail> orderDetails=detailRepository.findByOrderId(orderDto.getOrderId());
         //返回库存
         if (CollectionUtils.isEmpty(orderDetails)){
-            log.error("【取消订单】订单中无商品详情,orderId={}",orderDto.getOrderID());
+            log.error("【取消订单】订单中无商品详情,orderId={}",orderDto.getOrderId());
             throw new SellException(ResultEnum.ORDER_DETAIL_EMPTY);
         }
 
@@ -167,19 +167,19 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public OrderDto finish(OrderDto orderDto) {
 
-        if (orderDto.getOrderID()==null){
+        if (orderDto.getOrderId()==null){
             log.error("订单ID为空对象{}",orderDto.toString());
             throw new SellException(ResultEnum.ORDERID_IS_NULL);
         }
 
-        OrderMaster orderMaster=orderMasterRepository.findOne(orderDto.getOrderID());
+        OrderMaster orderMaster=orderMasterRepository.findOne(orderDto.getOrderId());
         if (orderMaster==null){
-            log.error("订单不存在 订单ID{}",orderDto.getOrderID());
+            log.error("订单不存在 订单ID{}",orderDto.getOrderId());
             throw new SellException(ResultEnum.ORDER_NOT_EXIT);
         }
         BeanUtils.copyProperties(orderMaster,orderDto);
         if (!orderMaster.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
-            log.error("OrderService.cancel订单结束状态不正确，orderId={}，orderStatus={}",orderDto.getOrderID(),orderMaster.getOrderStatus());
+            log.error("OrderService.cancel订单结束状态不正确，orderId={}，orderStatus={}",orderDto.getOrderId(),orderMaster.getOrderStatus());
             throw new SellException(ResultEnum.ORDER_STATUS_ERROR);
         }
         orderMaster.setOrderStatus(OrderStatusEnum.FINSISHED.getCode());
@@ -195,22 +195,22 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public OrderDto paid(OrderDto orderDto) {
 
-        if (orderDto.getOrderID()==null){
+        if (orderDto.getOrderId()==null){
             log.error("订单ID为空对象{}",orderDto.toString());
             throw new SellException(ResultEnum.ORDERID_IS_NULL);
         }
 
         //判断订单状态
-        OrderMaster orderMaster=orderMasterRepository.findOne(orderDto.getOrderID());
+        OrderMaster orderMaster=orderMasterRepository.findOne(orderDto.getOrderId());
 
         if (orderMaster==null){
-            log.error("订单不存在 订单ID{}",orderDto.getOrderID());
+            log.error("订单不存在 订单ID{}",orderDto.getOrderId());
             throw new SellException(ResultEnum.ORDER_NOT_EXIT);
         }
         BeanUtils.copyProperties(orderMaster,orderDto);
 
         if (!orderMaster.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
-            log.error("【订单支付】订单状态不正确，orderId={}，orderStatus={}",orderDto.getOrderID(),orderMaster.getOrderStatus());
+            log.error("【订单支付】订单状态不正确，orderId={}，orderStatus={}",orderDto.getOrderId(),orderMaster.getOrderStatus());
             throw new SellException(ResultEnum.ORDER_STATUS_ERROR);
         }
         //判断支付状态

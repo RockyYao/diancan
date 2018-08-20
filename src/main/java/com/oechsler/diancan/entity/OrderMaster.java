@@ -4,13 +4,11 @@ import com.oechsler.diancan.enums.OrderStatusEnum;
 import com.oechsler.diancan.enums.PayStatusEnum;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Data
@@ -19,7 +17,7 @@ public class OrderMaster implements Serializable {
 
     /** 订单ID*/
     @Id
-    private String orderID;
+    private String orderId;
 
     private String buyerName;
 
@@ -29,7 +27,7 @@ public class OrderMaster implements Serializable {
 
     private String buyerOpenid;
     /** 订单金额*/
-    private BigDecimal orderAmout;
+    private BigDecimal orderAmount;
     /** 订单状态*/
     private Integer orderStatus=OrderStatusEnum.NEW.getCode();
     /** 支付状态*/

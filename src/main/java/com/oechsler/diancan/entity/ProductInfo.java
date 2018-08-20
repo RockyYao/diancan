@@ -38,7 +38,7 @@ public class ProductInfo implements Serializable{
     /** 商品状态 0正常1下架*/
     private Integer productStatus;
 
-    private Date creatTime;
+    private Date createTime;
 
     private Date updateTime;
 }

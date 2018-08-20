@@ -16,7 +16,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)//null值不返回
 public class OrderDto {
     /** 订单ID*/
-    private String orderID;
+    private String orderId;
 
     private String buyerName;
 
@@ -26,7 +26,7 @@ public class OrderDto {
 
     private String buyerOpenid;
     /** 订单金额*/
-    private BigDecimal orderAmout;
+    private BigDecimal orderAmount;
     /** 订单状态*/
     private Integer orderStatus=OrderStatusEnum.NEW.getCode();
     /** 支付状态*/

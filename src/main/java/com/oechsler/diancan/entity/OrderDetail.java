@@ -2,14 +2,16 @@ package com.oechsler.diancan.entity;
 
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Data
 @Entity
+@DynamicUpdate
 public class OrderDetail implements Serializable {
 
     @Id

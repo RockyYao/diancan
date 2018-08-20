@@ -58,7 +58,7 @@ public class BuyOrderController {
         OrderDto createResult=orderService.creat(orderDto);
 
         Map<String,String> map=new ConcurrentHashMap<>();
-        map.put("orderId",createResult.getOrderID());
+        map.put("orderId",createResult.getOrderId());
         return ResultVoUtil.success(map);
 
     }
@@ -82,7 +82,7 @@ public class BuyOrderController {
 
     @GetMapping("/detail")
     public ResultVo<OrderDto> detail(@RequestParam("openid") String openid,
-                                     @RequestParam("orderid") String orderid){
+                                     @RequestParam("orderId") String orderid){
 
         OrderDto orderDto=  buyerService.findOrderOne(openid,orderid);
 
@@ -94,7 +94,7 @@ public class BuyOrderController {
 
     @GetMapping("/cancel")
     public ResultVo cancel(@RequestParam("openid") String openid,
-                           @RequestParam("orderid") String orderid){
+                           @RequestParam("orderId") String orderid){
 
         buyerService.cancelOrder(openid,orderid);
         return ResultVoUtil.success();
