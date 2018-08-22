@@ -9,6 +9,7 @@ import com.oechsler.diancan.service.OrderService;
 import com.oechsler.diancan.util.ResultVoUtil;
 import com.oechsler.diancan.vo.ResultVo;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,7 @@ public class BuyOrderController {
     @Autowired
     private BuyerService buyerService;
     //创建订单
+    @ApiOperation(httpMethod = "POST", value = "[微信点餐]-创建订餐", notes = "创建订单", response = ResultVo.class)
     @RequestMapping(value = "/create",method = RequestMethod.POST)
     public ResultVo<Map<String,String>> create(@Valid OrderFrom orderFrom, BindingResult bindingResult){
 
@@ -65,6 +67,7 @@ public class BuyOrderController {
 
     //订单列表
     @GetMapping("/list")
+    @ApiOperation(httpMethod = "GET", value = "[微信点餐]-查询订单列表", notes = "查询订单列表", response = ResultVo.class)
     public ResultVo<List<OrderDto>> list(@RequestParam("openid") String openid,
                                          @RequestParam(value = "page",defaultValue = "0") Integer page,
                                          @RequestParam(value = "size",defaultValue = "10") Integer size){
@@ -81,6 +84,7 @@ public class BuyOrderController {
     //订单详情
 
     @GetMapping("/detail")
+    @ApiOperation(httpMethod = "GET", value = "[微信点餐]-查询订单详情", notes = "查询订单详情", response = ResultVo.class)
     public ResultVo<OrderDto> detail(@RequestParam("openid") String openid,
                                      @RequestParam("orderId") String orderid){
 
@@ -92,7 +96,8 @@ public class BuyOrderController {
 
     //取消订单
 
-    @GetMapping("/cancel")
+    @ApiOperation(httpMethod = "GET", value = "[微信点餐]-取消订单", notes = "取消订单", response = ResultVo.class)
+    @PostMapping("/cancel")
     public ResultVo cancel(@RequestParam("openid") String openid,
                            @RequestParam("orderId") String orderid){
 

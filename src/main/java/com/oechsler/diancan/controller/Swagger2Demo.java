@@ -47,7 +47,7 @@ public class Swagger2Demo {
      * @param req
      * @throws IOException
      */
-    @RequestMapping("weChat")
+    @RequestMapping("/wechat")
     public void doGet(HttpServletResponse response, HttpServletRequest req) throws IOException {
 
         log.info("-----开始校验签名-----");

@@ -1,6 +1,8 @@
 package com.oechsler.diancan.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oechsler.diancan.enums.ProductStatusEnum;
+import com.oechsler.diancan.util.EnumUtil;
 import lombok.Data;
 import lombok.ToString;
 import org.hibernate.annotations.DynamicUpdate;
@@ -41,4 +43,11 @@ public class ProductInfo implements Serializable{
     private Date createTime;
 
     private Date updateTime;
+
+    @JsonIgnore
+    public ProductStatusEnum getProductStatusEnum(){
+
+        return EnumUtil.getByCode(productStatus,ProductStatusEnum.class);
+
+    }
 }

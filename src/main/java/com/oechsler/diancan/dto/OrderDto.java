@@ -1,11 +1,13 @@
 package com.oechsler.diancan.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.oechsler.diancan.entity.OrderDetail;
 import com.oechsler.diancan.enums.OrderStatusEnum;
 import com.oechsler.diancan.enums.PayStatusEnum;
 import com.oechsler.diancan.util.Date2LongUtil;
+import io.swagger.models.auth.In;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -38,4 +40,18 @@ public class OrderDto {
     private Date updateTime;
 
     private List<OrderDetail> orderDetailList;
+
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum(Integer code){
+
+      return  OrderStatusEnum.getOrderStatusEnmu(code);
+    }
+    @JsonIgnore
+    public  PayStatusEnum getPayStatusEnum(Integer code){
+
+        return PayStatusEnum.getPaySyayusEnum(code);
+
+
+    }
+
 }

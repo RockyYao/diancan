@@ -1,10 +1,10 @@
 package com.oechsler.diancan.enums;
 
+import com.oechsler.diancan.util.EnumUtil;
 import lombok.Getter;
 
 @Getter
-public enum PayStatusEnum {
-
+public enum PayStatusEnum implements CodeEnum{
 
     WAIT(0,"等待支付"),
     SUCCESS(1,"支付成功")
@@ -20,5 +20,9 @@ public enum PayStatusEnum {
     }
 
 
+    public static PayStatusEnum getPaySyayusEnum(Integer code){
+
+        return EnumUtil.getByCode(code,PayStatusEnum.class);
+    }
 
 }

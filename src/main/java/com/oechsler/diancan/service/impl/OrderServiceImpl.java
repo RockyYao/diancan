@@ -115,6 +115,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Page<OrderDto> findList(Pageable pageable) {
+        Page<OrderMaster> orderMasters=orderMasterRepository.findAll(pageable);
+        List<OrderDto> orderDtoList=OrderMaster2OrderDTO.convert(orderMasters.getContent());
+        Page<OrderDto> orderDtos=new PageImpl<>(orderDtoList,pageable,orderMasters.getTotalElements());
+        return orderDtos;
+    }
+
+    @Override
     @Transactional
     public OrderDto cancel(OrderDto orderDto) {
 
@@ -156,7 +164,7 @@ public class OrderServiceImpl implements OrderService {
         //如果以支付，要退款
 
         if (orderMaster.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())){
-            //TUDO
+            //TODO
         }
 
 
