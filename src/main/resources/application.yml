@@ -15,10 +15,18 @@ spring:
     template-loader-path: classpath:/templates
   mvc:
     static-path-pattern: classpath:/static
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 2000
+    pool:
+      max-idle: 300
+      max-active: 100
+
 
 wechat:
  mpAppId: wx966fab9e16bef646
  mpAppSecret: 1d98180d2dfde14c2285056f00c48a4b
-
 
 

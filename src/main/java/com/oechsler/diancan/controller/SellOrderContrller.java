@@ -32,8 +32,6 @@ public class SellOrderContrller {
     PageRequest pageRequest=new PageRequest(page-1,size);
 
             Page<OrderDto> orderDtoPage= orderService.findList(pageRequest);
-
-
             map.put("currentPage",page);
             map.put("orderDtoPage",orderDtoPage);
             return new ModelAndView("order/list",map);
@@ -80,8 +78,6 @@ public ModelAndView cancel(@RequestParam("orderId")String orderId,Map<String,Obj
 
 
 }
-
-
 
 
 @GetMapping("detail")
